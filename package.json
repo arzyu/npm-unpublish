@@ -1,0 +1,32 @@
+{
+  "name": "npm-unpublish",
+  "version": "0.1.0",
+  "description": "Unpublish your npm package",
+  "bin": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "node -r ts-node/register src/index.ts",
+    "start:debug": "node --inspect-brk -r ts-node/register src/index.ts",
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "3.0.0",
+    "shelljs": "0.8.3"
+  },
+  "devDependencies": {
+    "@types/shelljs": "0.8.6",
+    "ts-node": "8.5.4",
+    "typescript": "3.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arzyu/npm-unpublish"
+  },
+  "license": "MIT"
+}
