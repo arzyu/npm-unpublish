@@ -21,7 +21,10 @@ console.log(`💩 Unpublishing ${pkgName}...`);
 const cmdList = [
   `npm deprecate ${pkgName} "${reason}"`,
   `npm owner add npm ${pkgName}`,
-  `npm owner rm $(npm whoami) ${pkgName}`
+
+  // run `npm info x` to refresh npm owner list
+  // otherwise, we will get "npm ERR! Cannot remove all owners of a package."
+  `npm info ${pkgName} && npm owner rm $(npm whoami) ${pkgName}`
 ];
 
 const run = (cmd: string) => new Promise((resolve, reject) => {
