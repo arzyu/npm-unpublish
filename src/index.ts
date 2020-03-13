@@ -16,7 +16,7 @@ if (args.length < 3) {
 const pkgName = args[2];
 const reason = args[3] || "Deprecated, please do not use it!";
 
-console.log(`💩　Unpublishing ${pkgName}...\n`);
+console.log(`💩 Unpublishing ${pkgName}...`);
 
 const cmdList = [
   `npm deprecate ${pkgName} "${reason}"`,
@@ -35,7 +35,5 @@ const run = (cmd: string) => new Promise((resolve, reject) => {
   for (let i = 0; i < cmdList.length; i++) {
     await run(cmdList[i]);
   }
-  console.log(success("🎉　Done."));
-})()
-  .then(result => console.log(success(result)))
-  .catch(error => console.log(fail(error)));
+  console.log(success("🎉 Done."));
+})().catch(error => console.log(fail(error)));
