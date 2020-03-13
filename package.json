@@ -1,6 +1,6 @@
 {
   "name": "npm-unpublish",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Unpublish your npm package",
   "bin": "dist/index.js",
   "main": "dist/index.js",
